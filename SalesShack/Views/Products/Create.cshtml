@@ -1,0 +1,23 @@
+@{
+  ViewData["Title"] = "Add a Product";
+}
+
+@model SalesShack.Models.Product;
+
+<div class="page-header">
+	<h1>Add a product!</h1>
+	<hr>
+</div>
+
+<p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<div id="form">
+	@using (Html.BeginForm())
+	{
+		@Html.TextBoxFor(model => model.Name, new { placeholder = "Name", style = "text-align: center;"})<br><br>
+		@Html.TextBoxFor(model => model.Description, new { placeholder = "Description", style = "text-align: center;"})<br><br>
+		<input type="submit" value="Add" />
+	}
+</div>
+
+<br><p>@Html.ActionLink("Back to List", "Index")</p>

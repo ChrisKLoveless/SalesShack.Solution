@@ -1,0 +1,34 @@
+@{
+  ViewData["Title"] = "All Products";
+}
+
+@using SalesShack.Models;
+
+<div class="container">
+  <h3>List of Products</h3>
+
+  <div id="form">
+    @if (Model.Count == 0)
+    {
+      <h3>No Products have been added yet</h3>
+    }
+    else
+    {
+      <ul>
+        @foreach (Product product in Model)
+        {
+          <div class="card" style="width: 10rem;">
+            @* <img
+          src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-product-pet-care-icongeek26-outline-colour-icongeek26.png"
+          class="card-img-top" alt="example product image"> *@
+            <div class="card-body">
+              <h5 class="card-title"><strong>@product.Name</strong>: @product.Description</h5>
+              <p class="btn btn-light">@Html.ActionLink("Details", "Details", "Products", new { id = @product.ProductId})</p>
+            </div>
+          </div>
+        }
+      </ul>
+    }
+    <p>@Html.ActionLink("Create a new Product", "Create")</p>
+  </div>
+</div>
