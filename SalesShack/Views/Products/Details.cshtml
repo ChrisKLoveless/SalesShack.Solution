@@ -1,0 +1,30 @@
+@{
+  ViewData["Title"] = "Product Details";
+}
+
+@model SalesShack.Models.Product;
+@using SalesShack.Models;
+
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+<div id="form">
+  @if (@Model.JoinEntities.Count == 0)
+  {
+    <p>This Product has no Sales</p>
+  }
+  else
+  {
+    @foreach (ProductSale join in Model.JoinEntities)
+    {
+      <h3>Sales: @join.Sale.Price</h3>
+      @using (Html.BeginForm("DeleteJoin", "Products"))
+      {
+        @Html.Hidden("joinId", @join.ProductSaleId)
+        <input type="submit" value="Delete" class="btn btn-danger" />
+      }
+    }
+  }
+</div>
+<p>@Html.ActionLink("Delete this Product", "Delete", new { id = Model.ProductId })</p>
+
+<p>@Html.ActionLink("Edit this Product", "Edit", new { id = Model.ProductId })</p>
