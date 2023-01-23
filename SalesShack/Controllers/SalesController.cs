@@ -9,35 +9,37 @@ using SalesShack.Models;
 
 namespace SalesShack.Controllers
 {
-  public class ProductsController : Controller
+  public class SalesController : Controller
   {
     private readonly SalesShackContext _db;
-    public ProductsController(SalesShackContext db)
+    public SalesController(SalesShackContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Product> products = _db.Products.ToList();
-      return View(products);
+      List<Sale> sales = _db.Sales.Include(sale => sale.Product).ToList();
+      return View(sales);
     }
 
     public ActionResult Create()
     {
+      ViewBag.ProductId = new SelectList(_db.Products, "ProductId", "Name");
       return View();
     }
 
     [HttpPost]
-    public ActionResult Create(Product product)
+    public ActionResult Create(Sale sale)
     {
       if (!ModelState.IsValid)
       {
-        return View(product);
+        ViewBag.ProductId = new SelectList(_db.Products, "ProductId", "Name");
+        return View(sale);
       }
       else
       {
-        _db.Products.Add(product);
+        _db.Sales.Add(sale);
         _db.SaveChanges();
         return RedirectToAction("Index");
       }
@@ -45,37 +47,38 @@ namespace SalesShack.Controllers
 
     public ActionResult Details(int id)
     {
-      Product thisProduct = _db.Products
-      .Include(s => s.Sales)
-      .FirstOrDefault(product => product.ProductId == id);
-      return View(thisProduct);
+      Sale thisSale = _db.Sales
+      // .Include(sale => sale.JoinEntities)
+      .Include(s => s.Product)
+      .FirstOrDefault(sale => sale.SaleId == id);
+      return View(thisSale);
     }
 
     public ActionResult Edit(int id)
     {
-      Product thisProduct = _db.Products.FirstOrDefault(product => product.ProductId == id);
-      return View(thisProduct);
+      Sale thisSale = _db.Sales.FirstOrDefault(sale => sale.SaleId == id);
+      return View(thisSale);
     }
 
     [HttpPost]
-    public ActionResult Edit(Product product)
+    public ActionResult Edit(Sale sale)
     {
-      _db.Products.Update(product);
+      _db.Sales.Update(sale);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      Product thisProduct = _db.Products.FirstOrDefault(product => product.ProductId == id);
-      return View(thisProduct);
+      Sale thisSale = _db.Sales.FirstOrDefault(sale => sale.SaleId == id);
+      return View(thisSale);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirm(int id)
     {
-      Product thisProduct = _db.Products.FirstOrDefault(product => product.ProductId == id);
-      _db.Products.Remove(thisProduct);
+      Sale thisSale = _db.Sales.FirstOrDefault(sale => sale.SaleId == id);
+      _db.Sales.Remove(thisSale);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

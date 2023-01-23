@@ -6,11 +6,11 @@ namespace SalesShack.Models
   {
     public int ProductId { get; set; }
 
-    [Required(ErrorMessage = "The Product name field can't be empty!")]
+    [Required(ErrorMessage = "The product name field can't be empty!")]
     public string Name { get; set; }
 
     public string Description { get; set; }
 
-    public List<ProductSale> JoinEntities { get; set; }
+    public List<Sale> Sales { get; set; }
   }
 }

@@ -1,0 +1,14 @@
+@{
+  ViewData["Title"] = "Sale Details";
+}
+
+@model SalesShack.Models.Client;
+@using SalesShack.Models;
+
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h5>@Html.DisplayNameFor(model => model.Company): @Html.DisplayFor(model => model.Company)</h5>
+<h5>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)</h5>
+
+<p>@Html.ActionLink("Delete this Client", "Delete", new { id = Model.ClientId })</p>
+
+<p>@Html.ActionLink("Edit this Client", "Edit", new { id = Model.ClientId })</p>

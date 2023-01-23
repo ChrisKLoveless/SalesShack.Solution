@@ -1,8 +1,8 @@
 namespace SalesShack.Models
 {
-  public class Customer 
+  public class Client 
   {
-    public int CustomerId { get; set; }
+    public int ClientId { get; set; }
 
     public string Name { get; set; }
 

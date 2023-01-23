@@ -1,0 +1,26 @@
+@{
+  ViewData["Title"] = "Edit Sale";
+}
+
+@model SalesShack.Models.Sale;
+
+<div class="page-header">
+	<h1>Edit</h1>
+	<hr>
+</div>
+
+<div id="form">
+	<h4>Edit this Sale: @Html.DisplayFor(model => model.Description)</h4>
+	@using (Html.BeginForm())
+	{
+		@Html.HiddenFor(model => model.SaleId)
+
+		@Html.LabelFor(model => model.Price, new { style = "padding-right: 10px;"})
+		@Html.EditorFor(model => model.Price)<br>
+		@Html.LabelFor(model => model.Description, new { style = "padding-right: 10px;"})
+		@Html.EditorFor(model => model.Description)<br>
+    @Html.LabelFor(model => model.DateSold, new { style = "padding-right: 10px;"})
+		@Html.EditorFor(model => model.DateSold)<br><br>
+		<input type="submit" value="Save" />
+	}
+</div>

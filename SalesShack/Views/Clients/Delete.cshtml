@@ -1,0 +1,21 @@
+@{
+  ViewData["Title"] = "Client Delete";
+}
+
+@model SalesShack.Models.Client;
+
+<div class="page-header">
+	<h1>Delete</h1>
+	<hr>
+</div>
+
+<h3>Are you sure?</h3>
+<div id="form">
+	@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+	@Html.DisplayNameFor(model => model.Company): @Html.DisplayFor(model => model.Company)
+	@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)
+	@using (Html.BeginForm())
+	{
+		<input type="submit" value="Delete" class="btn btn-danger" />
+	}
+</div>

@@ -11,8 +11,8 @@ using SalesShack.Models;
 namespace SalesShack.Solution.Migrations
 {
     [DbContext(typeof(SalesShackContext))]
-    [Migration("20230123190657_Initial")]
-    partial class Initial
+    [Migration("20230124000026_ChangeToClient")]
+    partial class ChangeToClient
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -149,9 +149,9 @@ namespace SalesShack.Solution.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("SalesShack.Models.Customer", b =>
+            modelBuilder.Entity("SalesShack.Models.Client", b =>
                 {
-                    b.Property<int>("CustomerId")
+                    b.Property<int>("ClientId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -164,9 +164,9 @@ namespace SalesShack.Solution.Migrations
                     b.Property<int>("PhoneNumber")
                         .HasColumnType("int");
 
-                    b.HasKey("CustomerId");
+                    b.HasKey("ClientId");
 
-                    b.ToTable("Customers");
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("SalesShack.Models.Product", b =>
@@ -187,43 +187,32 @@ namespace SalesShack.Solution.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("SalesShack.Models.ProductSale", b =>
-                {
-                    b.Property<int>("ProductSaleId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SaleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ProductSaleId");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("SaleId");
-
-                    b.ToTable("ProductSale");
-                });
-
             modelBuilder.Entity("SalesShack.Models.Sale", b =>
                 {
                     b.Property<int>("SaleId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateOnly?>("DateSold")
-                        .HasColumnType("date");
+                    b.Property<DateTime?>("DateSold")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
                     b.HasKey("SaleId");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Sales");
                 });
@@ -343,33 +332,26 @@ namespace SalesShack.Solution.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SalesShack.Models.ProductSale", b =>
+            modelBuilder.Entity("SalesShack.Models.Sale", b =>
                 {
                     b.HasOne("SalesShack.Models.Product", "Product")
-                        .WithMany("JoinEntities")
+                        .WithMany("Sales")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SalesShack.Models.Sale", "Sale")
-                        .WithMany("JoinEntities")
-                        .HasForeignKey("SaleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("SalesShack.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Product");
 
-                    b.Navigation("Sale");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("SalesShack.Models.Product", b =>
                 {
-                    b.Navigation("JoinEntities");
-                });
-
-            modelBuilder.Entity("SalesShack.Models.Sale", b =>
-                {
-                    b.Navigation("JoinEntities");
+                    b.Navigation("Sales");
                 });
 #pragma warning restore 612, 618
         }

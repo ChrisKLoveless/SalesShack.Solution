@@ -1,0 +1,34 @@
+@{
+  ViewData["Title"] = "All Clients";
+}
+
+@using SalesShack.Models;
+
+<div class="container">
+  <h3>List of Clients</h3>
+
+  <div id="form">
+    @if (Model.Count == 0)
+    {
+      <h3>No Clients have been added yet</h3>
+    }
+    else
+    {
+      <ul>
+        @foreach (Client client in Model)
+        {
+          <div class="card" style="width: 10rem;">
+            @* <img
+          src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-client-pet-care-icongeek26-outline-colour-icongeek26.png"
+          class="card-img-top" alt="example client image"> *@
+            <div class="card-body">
+              <h5 class="card-title"><strong>@client.Name</strong> | @client.Company | @client.PhoneNumber</h5>
+            </div>
+          </div>
+        }
+      </ul>
+    }
+    <p>@Html.ActionLink("Add a new client", "Create")</p>
+
+  </div>
+</div>

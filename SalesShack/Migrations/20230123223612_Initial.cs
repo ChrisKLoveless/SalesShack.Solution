@@ -103,22 +103,6 @@ namespace SalesShack.Solution.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Sales",
-                columns: table => new
-                {
-                    SaleId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Price = table.Column<int>(type: "int", nullable: false),
-                    DateSold = table.Column<DateOnly>(type: "date", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sales", x => x.SaleId);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -246,28 +230,32 @@ namespace SalesShack.Solution.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "ProductSale",
+                name: "Sales",
                 columns: table => new
                 {
-                    ProductSaleId = table.Column<int>(type: "int", nullable: false)
+                    SaleId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    SaleId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    DateSold = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductSale", x => x.ProductSaleId);
+                    table.PrimaryKey("PK_Sales", x => x.SaleId);
                     table.ForeignKey(
-                        name: "FK_ProductSale_Products_ProductId",
+                        name: "FK_Sales_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Sales_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "ProductId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ProductSale_Sales_SaleId",
-                        column: x => x.SaleId,
-                        principalTable: "Sales",
-                        principalColumn: "SaleId",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -310,14 +298,14 @@ namespace SalesShack.Solution.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductSale_ProductId",
-                table: "ProductSale",
+                name: "IX_Sales_ProductId",
+                table: "Sales",
                 column: "ProductId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductSale_SaleId",
-                table: "ProductSale",
-                column: "SaleId");
+                name: "IX_Sales_UserId",
+                table: "Sales",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -341,7 +329,7 @@ namespace SalesShack.Solution.Migrations
                 name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "ProductSale");
+                name: "Sales");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -351,9 +339,6 @@ namespace SalesShack.Solution.Migrations
 
             migrationBuilder.DropTable(
                 name: "Products");
-
-            migrationBuilder.DropTable(
-                name: "Sales");
         }
     }
 }

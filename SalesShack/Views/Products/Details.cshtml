@@ -8,18 +8,18 @@
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
 <div id="form">
-  @if (@Model.JoinEntities.Count == 0)
+  @if (@Model.Sales.Count == 0)
   {
     <p>This Product has no Sales</p>
   }
   else
   {
-    @foreach (ProductSale join in Model.JoinEntities)
+    @foreach (Sale sale in Model.Sales)
     {
-      <h3>Sales: @join.Sale.Price</h3>
+      <h3>Sales: @sale.Price | @sale.Description | @sale.DateSold</h3>
       @using (Html.BeginForm("DeleteJoin", "Products"))
       {
-        @Html.Hidden("joinId", @join.ProductSaleId)
+        @Html.Hidden("saleId", @sale.SaleId)
         <input type="submit" value="Delete" class="btn btn-danger" />
       }
     }

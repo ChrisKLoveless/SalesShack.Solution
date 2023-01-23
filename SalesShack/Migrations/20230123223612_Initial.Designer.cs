@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesShack.Models;
 
@@ -10,9 +11,10 @@ using SalesShack.Models;
 namespace SalesShack.Solution.Migrations
 {
     [DbContext(typeof(SalesShackContext))]
-    partial class SalesShackContextModelSnapshot : ModelSnapshot
+    [Migration("20230123223612_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -147,9 +149,9 @@ namespace SalesShack.Solution.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("SalesShack.Models.Client", b =>
+            modelBuilder.Entity("SalesShack.Models.Customer", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -162,9 +164,9 @@ namespace SalesShack.Solution.Migrations
                     b.Property<int>("PhoneNumber")
                         .HasColumnType("int");
 
-                    b.HasKey("ClientId");
+                    b.HasKey("CustomerId");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("SalesShack.Models.Product", b =>

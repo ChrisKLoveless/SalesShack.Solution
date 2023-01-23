@@ -1,0 +1,24 @@
+@{
+  ViewData["Title"] = "Add a Client";
+}
+
+@model SalesShack.Models.Client;
+
+<div class="page-header">
+	<h1>Add a client!</h1>
+	<hr>
+</div>
+
+<p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<div id="form">
+	@using (Html.BeginForm())
+	{
+		@Html.TextBoxFor(model => model.Name, new { placeholder = "Name", style = "text-align: center;"})<br><br>
+		@Html.TextBoxFor(model => model.Company, new { placeholder = "Company", style = "text-align: center;"})<br><br>
+		@Html.TextBoxFor(model => model.PhoneNumber, new { placeholder = "(012)-345-6789", style = "text-align: center;"})<br><br>
+		<input type="submit" value="Add" />
+	}
+</div>
+
+<br><p>@Html.ActionLink("Back to List", "Index")</p>

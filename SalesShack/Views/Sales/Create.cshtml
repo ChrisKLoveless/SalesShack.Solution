@@ -1,0 +1,33 @@
+@{
+  ViewData["Title"] = "Add a Sale";
+}
+
+@using SalesShack.Models;
+@model SalesShack.Models.Sale;
+
+<div class="page-header">
+	<h1>Add a sale!</h1>
+	<hr>
+</div>
+
+<p>@Html.ValidationMessageFor(model => model.Product, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p><strong>NOTE:</strong> <p>You must @Html.ActionLink("add a product", "Create", "Products") to add a sale!</p></p>
+
+<div id="form">
+	@using (Html.BeginForm())
+	{
+		@Html.LabelFor(model => model.Price, "Price $" , new {style = "padding-right: 10px;"})
+		@Html.EditorFor(model => model.Price, new { placeholder = "Price", style ="text-align: center;"})<br><br>
+		@Html.LabelFor(model => model.Description, new {style = "padding-right: 10px;"})
+		@Html.TextBoxFor(model => model.Description, new { style ="text-align: center;"})<br><br>
+		@Html.LabelFor(model => model.DateSold, "Date Sold", new { style = "padding-right: 10px;"});
+		@Html.EditorFor(model => model.DateSold)<br><br>
+	  @Html.LabelFor(model => model.Product, new {style = "padding-right: 10px;"})
+    @Html.DropDownList("ProductId")<br><br>
+		<input type="submit" value="Add" />
+	}
+</div>
+
+
+<br><p>@Html.ActionLink("Back to List", "Index")</p>
