@@ -15,4 +15,19 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: whitesmoke
+}
+
+#home-list {
+  text-align: center;
+}
+
+#list {
+text-align: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
