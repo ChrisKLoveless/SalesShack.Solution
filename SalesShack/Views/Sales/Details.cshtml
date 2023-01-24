@@ -10,24 +10,6 @@
 <h5>@Html.DisplayNameFor(model => model.Price): @Html.DisplayFor(model => model.Price)</h5>
 <h5>@Html.DisplayNameFor(model => model.DateSold): @Html.DisplayFor(model => model.DateSold)</h5>
 
-@* <div id="form">
-  @if (@Model.Product.Count == 0)
-  {
-    <p>This Sale has no Products</p>
-  }
-  else
-  {
-    @foreach (ProductSale join in Model.JoinEntities)
-    {
-      <h3>Sales: @join.Sale.Price</h3>
-      @using (Html.BeginForm("DeleteJoin", "Sales"))
-      {
-        @Html.Hidden("joinId", @join.ProductSaleId)
-        <input type="submit" value="Delete" class="btn btn-danger" />
-      }
-    }
-  }
-</div> *@
 <p>@Html.ActionLink("Delete this Sale", "Delete", new { id = Model.SaleId })</p>
 
 <p>@Html.ActionLink("Edit this Sale", "Edit", new { id = Model.SaleId })</p>

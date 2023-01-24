@@ -1,0 +1,25 @@
+@{
+  ViewData["Title"] = "Edit Promotion";
+}
+
+@model SalesShack.Models.Promotion;
+
+<div class="page-header">
+	<h1>Edit</h1>
+	<hr>
+</div>
+
+<div id="form">
+	<h4>Edit this Promotion: @Html.DisplayFor(model => model.Title)</h4>
+	@using (Html.BeginForm())
+	{
+		@Html.HiddenFor(model => model.PromotionId)
+
+		@Html.LabelFor(model => model.Title)
+		@Html.EditorFor(model => model.Title)<br>
+		@Html.LabelFor(model => model.Description)
+		@Html.EditorFor(model => model.Description)<br>
+		<input type="submit" value="Save" />
+	}
+</div>
+<p>@Html.ActionLink("Back to list", "Index")</p>

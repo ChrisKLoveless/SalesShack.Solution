@@ -1,0 +1,31 @@
+@{
+  ViewData["Title"] = "Add a Promotion";
+}
+
+@using SalesShack.Models;
+@model SalesShack.Models.Promotion;
+
+<div class="page-header">
+	<h1>Add a promotion!</h1>
+	<hr>
+</div>
+
+<p>@Html.ValidationMessageFor(model => model.Product, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
+<p><strong>NOTE:</strong> <p>You must @Html.ActionLink("add a product", "Create", "Products") to add a promotion!</p></p>
+
+<div id="form">
+	@using (Html.BeginForm())
+	{
+		@Html.LabelFor(model => model.Title, "Title" , new {style = "padding-right: 10px;"})
+		@Html.EditorFor(model => model.Title, new { placeholder = "Title", style ="text-align: center;"})<br><br>
+		@Html.LabelFor(model => model.Description, new {style = "padding-right: 10px;"})
+		@Html.TextBoxFor(model => model.Description, new { style ="text-align: center;"})<br><br>
+	  @Html.LabelFor(model => model.Product, new {style = "padding-right: 10px;"})
+    @Html.DropDownList("ProductId")<br><br>
+		<input type="submit" value="Add" />
+	}
+</div>
+
+
+<br><p>@Html.ActionLink("Back to List", "Index")</p>

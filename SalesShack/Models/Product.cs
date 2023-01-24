@@ -12,5 +12,7 @@ namespace SalesShack.Models
     public string Description { get; set; }
 
     public List<Sale> Sales { get; set; }
+
+    public List<Promotion> Promotions { get; set; }
   }
 }
