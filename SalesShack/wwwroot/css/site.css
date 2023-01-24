@@ -126,5 +126,6 @@ li.nav-item {
     min-width: 320px;
     min-height: 338px;
     overflow: hidden;
+    text-align: center;
 }
 

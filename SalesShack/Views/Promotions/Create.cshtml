@@ -8,20 +8,18 @@
 
 <p>@Html.ValidationMessageFor(model => model.Product, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
-<p><strong>NOTE:</strong> <p>You must @Html.ActionLink("add a product", "Create", "Products") to add a promotion!</p></p>
+<p style="text-align: center;"><strong>NOTE:</strong> <p style="text-align: center;">You must @Html.ActionLink("add a product", "Create", "Products") to add a promotion!</p></p>
 
 <div id="create-box">
 	@using (Html.BeginForm())
 	{
-		@Html.EditorFor(m => m.Title, new { htmlAttributes = new { placeholder = "Title", style ="text-align: center;" } })<br><br>
-		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style ="text-align: center;" } })<br><br>
-		@Html.EditorFor(m => m.StartDate, new { htmlAttributes = new { placeholder = "StartDate", style ="text-align: center;" } })<br><br>
-		@Html.EditorFor(m => m.EndDate, new { htmlAttributes = new { placeholder = "EndDate", style ="text-align: center;" } })<br><br>
+		<h4 style="text-align: center;">Add a promotion!</h4><br>
+		@Html.EditorFor(m => m.Title, new { htmlAttributes = new { placeholder = "Title", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.StartDate, new { htmlAttributes = new { placeholder = "StartDate", style="text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.EndDate, new { htmlAttributes = new { placeholder = "EndDate", style="text-align: center;" } })<br><br>
 	  @Html.LabelFor(model => model.Product, new {style = "padding-right: 10px;"})
     @Html.DropDownList("ProductId")<br><br>
 		<input type="submit" value="Add" />
 	}
 </div>
-
-
-<br><p>@Html.ActionLink("Back to List", "Index")</p>
