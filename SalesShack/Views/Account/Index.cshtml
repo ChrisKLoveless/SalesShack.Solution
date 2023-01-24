@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="page-header">
+  <h1>Authentication</h1>
+  <hr>
+</div>
+<hr />
+
+<div id="form">
+  @if (User.Identity.IsAuthenticated)
+  {
+    <h2>Hello @User.Identity.Name!</h2>
+    @using (Html.BeginForm("LogOff", "Account"))
+    {
+      <input type="submit" class="btn btn-danger" value="Log out" />
+    }
+  }
+  else
+  {
+    <p>@Html.ActionLink("Register", "Register")</p>
+    <p>@Html.ActionLink("Log in", "Login")</p>
+  }
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</div>

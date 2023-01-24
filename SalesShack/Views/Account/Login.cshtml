@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using SalesShack.ViewModels;
+
+@model LoginViewModel;
+
+<div class="page-header">
+  <h1>Log In</h1>
+  <hr>
+</div>
+<hr />
+
+<div id="form">
+  @if (!ViewData.ModelState.IsValid)
+  {
+    @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
+  }
+
+  @using (Html.BeginForm())
+  {
+    <em>@Html.LabelFor(m => m.Email)</em>
+    @Html.TextBoxFor(m => m.Email)<br>
+
+    <em>@Html.LabelFor(m => m.Password)</em>
+    @Html.EditorFor(m => m.Password)<br>
+
+    <input type="submit" value="Log in" />
+  }
+  <p>@Html.ActionLink("Register for an account", "Register")</p>
+  <p>@Html.ActionLink("Back to accounts page", "Index")</p>
+</div>
