@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace SalesShack.Models
 {
   public class Client 
@@ -7,7 +9,7 @@ namespace SalesShack.Models
     public string Name { get; set; }
 
     public string Company { get; set; }
-
-    public int PhoneNumber { get; set; }
+    [Required(ErrorMessage = "The phone number field can't be empty!")]
+    public string PhoneNumber { get; set; }
   }    
 }

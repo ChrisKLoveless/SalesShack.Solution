@@ -17,15 +17,16 @@
       <ul>
         @foreach (Client client in Model)
         {
-          <div class="card" style="width: 10rem;">
+          <div class="card" style="width: 14rem;">
             @* <img
           src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-client-pet-care-icongeek26-outline-colour-icongeek26.png"
           class="card-img-top" alt="example client image"> *@
             <div class="card-body">
-              <h5 class="card-title"><strong>@client.Name</strong> | @client.Company | @client.PhoneNumber</h5>
+              <h5 class="card-title"><strong>Name:</strong> @client.Name <strong>Company:</strong>@client.Company <strong>Phone Number:</strong>@client.PhoneNumber</h5>
             </div>
           </div>
         }
+        
       </ul>
     }
     <p>@Html.ActionLink("Add a new client", "Create")</p>
