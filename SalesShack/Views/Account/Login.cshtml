@@ -1,18 +1,12 @@
-@{
-  Layout = "_Layout";
-}
-
 @using SalesShack.ViewModels;
 
 @model LoginViewModel;
 
-<div class="page-header">
-  <h1>Log In</h1>
-  <hr>
-</div>
-<hr />
 
-<div id="form">
+
+<div id="login-form">
+  <div id = "login-box">
+  <img class="login-logo" src="../img/logo-color.png">
   @if (!ViewData.ModelState.IsValid)
   {
     @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
@@ -20,14 +14,10 @@
 
   @using (Html.BeginForm())
   {
-    <em>@Html.LabelFor(m => m.Email)</em>
-    @Html.TextBoxFor(m => m.Email)<br>
-
-    <em>@Html.LabelFor(m => m.Password)</em>
-    @Html.EditorFor(m => m.Password)<br>
-
-    <input type="submit" value="Log in" />
+   <br><em> @Html.TextBoxFor(m => m.Email, new { placeholder = "Email Addresss", style="margin-left: 50px; text-align: center;"})<br><br></em>
+   <input type="password" style="margin-left: 50px; text-align: center;" placeholder="Password" @Html.EditorFor(m => m.Password)><br><br>
+   <input type="submit" style="margin-left: 105px;" value="Log in" id="button"/><br>
   }
-  <p>@Html.ActionLink("Register for an account", "Register")</p>
-  <p>@Html.ActionLink("Back to accounts page", "Index")</p>
+  <br><p style="margin-left: 25px;">Dont have an account yet? @Html.ActionLink("Sign up!", "Register")</p>
+  </div>
 </div>

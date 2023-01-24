@@ -5,26 +5,18 @@
 @using SalesShack.Models;
 @model SalesShack.Models.Promotion;
 
-<div class="page-header">
-	<h1>Add a promotion!</h1>
-	<hr>
-</div>
 
 <p>@Html.ValidationMessageFor(model => model.Product, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 <p><strong>NOTE:</strong> <p>You must @Html.ActionLink("add a product", "Create", "Products") to add a promotion!</p></p>
 
-<div id="form">
+<div id="create-box">
 	@using (Html.BeginForm())
 	{
-		@Html.LabelFor(model => model.Title, "Title" , new {style = "padding-right: 10px;"})
-		@Html.EditorFor(model => model.Title, new { placeholder = "Title", style ="text-align: center;"})<br><br>
-		@Html.LabelFor(model => model.Description, new {style = "padding-right: 10px;"})
-		@Html.TextBoxFor(model => model.Description, new { style ="text-align: center;"})<br><br>
-		@Html.LabelFor(model => model.StartDate, "Date Sold", new { style = "padding-right: 10px;"});
-		@Html.EditorFor(model => model.StartDate)<br><br>
-		@Html.LabelFor(model => model.EndDate, "Date Sold", new { style = "padding-right: 10px;"});
-		@Html.EditorFor(model => model.EndDate)<br><br>
+		@Html.EditorFor(m => m.Title, new { htmlAttributes = new { placeholder = "Title", style ="text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style ="text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.StartDate, new { htmlAttributes = new { placeholder = "StartDate", style ="text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.EndDate, new { htmlAttributes = new { placeholder = "EndDate", style ="text-align: center;" } })<br><br>
 	  @Html.LabelFor(model => model.Product, new {style = "padding-right: 10px;"})
     @Html.DropDownList("ProductId")<br><br>
 		<input type="submit" value="Add" />

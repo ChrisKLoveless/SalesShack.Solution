@@ -11,6 +11,7 @@
 
 <p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
+<div id="border">
 <div id="form">
 	@using (Html.BeginForm())
 	{
@@ -19,5 +20,5 @@
 		<input type="submit" value="Add" />
 	}
 </div>
-
-<br><p>@Html.ActionLink("Back to List", "Index")</p>
+</div>
+<br><p style="text-align: center;">@Html.ActionLink("Back to List", "Index")</p>
