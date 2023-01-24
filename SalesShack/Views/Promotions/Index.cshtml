@@ -1,0 +1,34 @@
+@{
+  ViewData["Title"] = "All Promotions";
+}
+
+@using SalesShack.Models;
+
+<div class="container" style="text-align: center;">
+  <h3 style="text-align: center;">List of Promotions</h3>
+
+  <div id="form">
+    @if (Model.Count == 0)
+    {
+      <h3>No Promotions have been added yet</h3>
+    }
+    else
+    {
+      <ul>
+        @foreach (Promotion promotion in Model)
+        {
+          <div class="card" style="text-align: center; width: 15rem;">
+            @* <img
+          src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-promotion-pet-care-icongeek26-outline-colour-icongeek26.png"
+          class="card-img-top" alt="example promotion image"> *@
+            <div class="card-body">
+              <h5 class="card-title"><strong>@promotion.Product.Name</strong> | @promotion.Title</h5><br>
+              <p class="btn btn-light">@Html.ActionLink("Details", "Details", "Promotions", new { id = @promotion.PromotionId})</p>
+            </div>
+          </div>
+        }
+      </ul>
+    }
+    <p>@Html.ActionLink("Create a new Promotion", "Create")</p>
+  </div>
+</div>

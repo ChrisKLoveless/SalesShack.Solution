@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SalesShack.Models;
 
@@ -10,9 +11,10 @@ using SalesShack.Models;
 namespace SalesShack.Solution.Migrations
 {
     [DbContext(typeof(SalesShackContext))]
-    partial class SalesShackContextModelSnapshot : ModelSnapshot
+    [Migration("20230124170440_PromotionEntity")]
+    partial class PromotionEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -195,16 +197,11 @@ namespace SalesShack.Solution.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("PromotionId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("Promotions");
                 });
@@ -354,17 +351,6 @@ namespace SalesShack.Solution.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SalesShack.Models.Promotion", b =>
-                {
-                    b.HasOne("SalesShack.Models.Product", "Product")
-                        .WithMany("Promotions")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("SalesShack.Models.Sale", b =>
                 {
                     b.HasOne("SalesShack.Models.Product", "Product")
@@ -384,8 +370,6 @@ namespace SalesShack.Solution.Migrations
 
             modelBuilder.Entity("SalesShack.Models.Product", b =>
                 {
-                    b.Navigation("Promotions");
-
                     b.Navigation("Sales");
                 });
 #pragma warning restore 612, 618
