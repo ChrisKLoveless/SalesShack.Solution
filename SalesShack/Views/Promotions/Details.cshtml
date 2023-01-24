@@ -1,0 +1,15 @@
+@{
+  ViewData["Title"] = "Promotion Details";
+}
+
+@model SalesShack.Models.Promotion;
+@using SalesShack.Models;
+
+<h3>@Html.DisplayNameFor(model => model.Product.Name): @Html.DisplayFor(model => model.Product.Name)</h3>
+<h5>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</h5>
+<h5>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h5>
+
+
+<p>@Html.ActionLink("Delete this Promotion", "Delete", new { id = Model.PromotionId })</p>
+
+<p>@Html.ActionLink("Edit this Promotion", "Edit", new { id = Model.PromotionId })</p>
