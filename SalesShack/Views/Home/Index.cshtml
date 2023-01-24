@@ -1,8 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+	ViewData["Title"] = "Home Page";
 }
 
+@using SalesShack.Models;
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+	<h1 class="display-4">Welcome</h1>
 </div>
 
+<div class="row">
+	<div class="col-6" id="home-list">
+
+		<h4><u>Available Products</u></h4>
+		@if (Model["Products"].Length == 0)
+		{
+			<p>No Products have been added yet!</p>
+		}
+
+		@foreach (Product product in Model["Products"])
+		{
+			<div class="card" style="width: 10rem;">
+				<div class="card-body">
+					<h5 class="card-title"><strong>@product.Name</strong></h5>
+					<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Products", new { id = @product.ProductId})</p>
+				</div>
+			</div>
+		}
+	</div>
+
+	<div class="col-6 " id="home-list">
+		<h4><u>Available Promotions</u></h4>
+		@if (Model["Promotions"].Length == 0)
+		{
+			<p>No Promotions have been added yet!</p>
+		}
+
+		@foreach (Promotion promotion in Model["Promotions"])
+		{
+			<div class="card" style="width: 10rem;">
+				<div class="card-body">
+					<h5 class="card-title"><strong>@promotion.Title</strong></h5>
+					<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Promotions", new { id = @promotion.PromotionId})</p>
+				</div>
+			</div>
+		}
+	</div>

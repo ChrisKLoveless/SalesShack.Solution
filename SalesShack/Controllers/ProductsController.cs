@@ -47,6 +47,7 @@ namespace SalesShack.Controllers
     {
       Product thisProduct = _db.Products
       .Include(s => s.Sales)
+      .Include(s => s.Promotions)
       .FirstOrDefault(product => product.ProductId == id);
       return View(thisProduct);
     }

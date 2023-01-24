@@ -9,6 +9,10 @@ namespace SalesShack.Models
     public string Title { get; set; }
 
     public string Description { get; set; }
+
+    public DateTime? StartDate { get; set; }
+
+    public DateTime? EndDate{ get; set; }
     
     [Required(ErrorMessage = "The product field can't be empty!")]
     public int ProductId { get; set; }

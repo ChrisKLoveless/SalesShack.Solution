@@ -21,6 +21,10 @@
 		@Html.EditorFor(model => model.Title, new { placeholder = "Title", style ="text-align: center;"})<br><br>
 		@Html.LabelFor(model => model.Description, new {style = "padding-right: 10px;"})
 		@Html.TextBoxFor(model => model.Description, new { style ="text-align: center;"})<br><br>
+		@Html.LabelFor(model => model.StartDate, "Date Sold", new { style = "padding-right: 10px;"});
+		@Html.EditorFor(model => model.StartDate)<br><br>
+		@Html.LabelFor(model => model.EndDate, "Date Sold", new { style = "padding-right: 10px;"});
+		@Html.EditorFor(model => model.EndDate)<br><br>
 	  @Html.LabelFor(model => model.Product, new {style = "padding-right: 10px;"})
     @Html.DropDownList("ProductId")<br><br>
 		<input type="submit" value="Add" />

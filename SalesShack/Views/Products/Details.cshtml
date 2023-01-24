@@ -17,11 +17,10 @@
     @foreach (Sale sale in Model.Sales)
     {
       <h3>Sales: @sale.Price | @sale.Description | @sale.DateSold</h3>
-      @using (Html.BeginForm("DeleteJoin", "Products"))
-      {
-        @Html.Hidden("saleId", @sale.SaleId)
-        <input type="submit" value="Delete" class="btn btn-danger" />
-      }
+    }
+    @foreach (Promotion promotion in Model.Promotions)
+    {
+      <h3>Promotions: @promotion.Title | @promotion.Description | @promotion.StartDate | @promotion.EndDate</h3>
     }
   }
 </div>
