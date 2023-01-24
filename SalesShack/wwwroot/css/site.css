@@ -18,12 +18,25 @@ body {
   background-color: whitesmoke
 }
 
+.container-fluid {
+  background-color: #07692e;
+}
+
 #home-list {
   text-align: center;
 }
 
 #list {
 text-align: center;
+}
+
+#logo {
+  width: 160px;
+  height: 160px;
+}
+
+li.nav-item {
+  font-size: 15.4px;
 }
 
 .row {
