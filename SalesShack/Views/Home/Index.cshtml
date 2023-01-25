@@ -4,44 +4,57 @@
 
 @using SalesShack.Models;
 
+
+@if(User.Identity.IsAuthenticated)
+{
 <div class="text-center">
 	<h1 class="display-4">Welcome</h1>
 </div>
+	<h2>Hello @User.Identity.Name!</h2>
+	<div class="row">
+<div class="content-wrapper">
+		<div class="col-6" id="home-list">
+			<h4><u>Products</u></h4>
+			@if (Model["Products"].Length == 0)
+			{
+				<p>No Products have been added yet!</p>
+			}
 
-<div class="row">
-	<div class="col-6" id="home-list">
-
-		<h4><u>Products</u></h4>
-		@if (Model["Products"].Length == 0)
-		{
-			<p>No Products have been added yet!</p>
-		}
-
-		@foreach (Product product in Model["Products"])
-		{
-			<div class="card" style="width: 10rem;">
-				<div class="card-body">
-					<h5 class="card-title"><strong>@product.Name</strong></h5>
-					<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Products", new { id = @product.ProductId})</p>
+			@foreach (Product product in Model["Products"])
+			{
+				<div class="card" style="width: 10rem;">
+					<div class="card-body">
+						<h5 class="card-title"><strong>@product.Name</strong></h5>
+						<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Products", new { id = @product.ProductId})
+						</p>
+					</div>
 				</div>
-			</div>
-		}
-	</div>
+			}
+		</div>
+		</div>
+		<div class="content-wrapper">
+		<div class="col-6 " id="home-list">
+			<h4><u>Promotions</u></h4>
+			@if (Model["Promotions"].Length == 0)
+			{
+				<p>No Promotions have been added yet!</p>
+			}
 
-	<div class="col-6 " id="home-list">
-		<h4><u>Promotions</u></h4>
-		@if (Model["Promotions"].Length == 0)
-		{
-			<p>No Promotions have been added yet!</p>
-		}
-
-		@foreach (Promotion promotion in Model["Promotions"])
-		{
-			<div class="card" style="width: 10rem;">
-				<div class="card-body">
-					<h5 class="card-title"><strong>@promotion.Title</strong></h5>
-					<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Promotions", new { id = @promotion.PromotionId})</p>
+			@foreach (Promotion promotion in Model["Promotions"])
+			{
+				<div class="card" style="width: 10rem;">
+					<div class="card-body">
+						<h5 class="card-title"><strong>@promotion.Title</strong></h5>
+						<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Promotions", new { id =
+						@promotion.PromotionId})</p>
+					</div>
 				</div>
-			</div>
-		}
+			}
+		</div>
 	</div>
+</div>
+}
+else
+{
+	<p style="margin-left: 25px;">Dont have an account yet? @Html.ActionLink("Sign up!", "Register")</p>
+}
