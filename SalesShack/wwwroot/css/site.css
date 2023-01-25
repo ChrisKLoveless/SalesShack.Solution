@@ -14,8 +14,11 @@ html {
 }
 
 body {
+  color: rgb(143, 112, 74);
+  background-image: url(../img/background.jpg);
+  background-size:contain;
+  background-repeat: no-repeat;
   margin-bottom: 60px;
-  background-color: whitesmoke;
 }
 
 .card {
@@ -42,10 +45,6 @@ body {
   margin-top: 20px;
 }
 
-.container-fluid {
-  background-color: #07692e;
-}
-
 #home-list {
   text-align: center;
 }
@@ -55,8 +54,8 @@ text-align: center;
 }
 
 #logo {
-  width: 160px;
-  height: 160px;
+  width: 300px;
+  height: 180px;
 }
 
 li.nav-item {
