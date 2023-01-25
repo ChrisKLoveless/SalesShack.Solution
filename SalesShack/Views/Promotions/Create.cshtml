@@ -20,6 +20,6 @@
 		@Html.EditorFor(m => m.EndDate, new { htmlAttributes = new { placeholder = "EndDate", style="text-align: center;" } })<br><br>
 	  @Html.LabelFor(model => model.Product, new {style = "padding-right: 10px;"})
     @Html.DropDownList("ProductId")<br><br>
-		<input type="submit" value="Add" />
+		<input type="submit" id="button" value="Add" />
 	}
 </div>

@@ -71,6 +71,7 @@ li.nav-item {
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 #login-box {

@@ -6,12 +6,9 @@
 
 @model RegisterViewModel;
 
-<div class="page-header">
-  <h1>Register a new Account</h1>
-  <hr>
-</div>
-<hr />
 <div id="form">
+<div id = "login-box">
+<img class="login-logo" src="../img/logo-color.png">
   @if (!ViewData.ModelState.IsValid)
   {
     @Html.ValidationSummary("Please fix the following error(s) and then resubmit the form:")
@@ -19,18 +16,16 @@
 
   @using (Html.BeginForm("Register", "Account", FormMethod.Post))
   {
-    <em>@Html.LabelFor(user => user.Email)</em>
-    @Html.TextBoxFor(user=> user.Email)<br>
 
-    <em>@Html.LabelFor(user=> user.Password)</em>
-    @Html.EditorFor(user=> user.Password)<br>
+    <h5><strong>Sign Up</strong></h5>
 
-    <em>@Html.LabelFor(user=> user.ConfirmPassword)</em>
-    @Html.EditorFor(user=> user.ConfirmPassword)<br>
-    <hr>
+    <br><em>@Html.TextBoxFor(user=> user.Email, new { placeholder = "Email Addresss", style="text-align: center;"})<br><br></em>
 
-    <input type="submit" value="Register" class="btn btn-success"/>
+    <input type="password" style="text-align: center;" placeholder="Password" @Html.EditorFor(m => m.Password)><br><br>
+
+    <input type="password" style="text-align: center;" placeholder="Confirm Password" @Html.EditorFor(m => m.ConfirmPassword)><br><br>
+
+    <input type="submit" value="Register" id="button"/>
   }
-  <br>
-  <p>@Html.ActionLink("Back to accounts page", "Index")</p>
+</div>
 </div>
