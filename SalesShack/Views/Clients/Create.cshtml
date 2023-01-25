@@ -4,21 +4,15 @@
 
 @model SalesShack.Models.Client;
 
-<div class="page-header">
-	<h1>Add a client!</h1>
-	<hr>
-</div>
-
-<p>@Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
-
+<div id="create-box">
 <div id="form">
 	@using (Html.BeginForm())
 	{
+		<h4 style="text-align: center;">Add a client!</h4><br>
 		@Html.TextBoxFor(model => model.Name, new { placeholder = "Name", style = "text-align: center;"})<br><br>
 		@Html.TextBoxFor(model => model.Company, new { placeholder = "Company", style = "text-align: center;"})<br><br>
 		@Html.TextBoxFor(model => model.PhoneNumber, new { placeholder = "(012)-345-6789", style = "text-align: center;"})<br><br>
-		<input type="submit" value="Add" />
+		<input type="submit" value="Add" id="button"/>
 	}
 </div>
-
-<br><p>@Html.ActionLink("Back to List", "Index")</p>
+</div>
