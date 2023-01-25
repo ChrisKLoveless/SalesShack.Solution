@@ -14,8 +14,11 @@ html {
 }
 
 body {
+  color: rgb(143, 112, 74);
+  background-image: url(../img/background.jpg);
+  background-size:contain;
+  background-repeat: no-repeat;
   margin-bottom: 60px;
-  background-color: whitesmoke;
 }
 
 .card {
