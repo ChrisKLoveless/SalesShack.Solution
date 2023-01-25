@@ -4,23 +4,22 @@
 
 @model SalesShack.Models.Sale;
 
-<div class="page-header">
-	<h1>Edit</h1>
-	<hr>
-</div>
-
+<div class="container" style="text-align: center;">
+  <div class="content-wrapper">
+  <div id="list">
+<h5><strong>Edit this Sale!</strong></h5><br>
 <div id="form">
-	<h4>Edit this Sale: @Html.DisplayFor(model => model.Description)</h4>
 	@using (Html.BeginForm())
 	{
 		@Html.HiddenFor(model => model.SaleId)
 
-		@Html.LabelFor(model => model.Price, new { style = "padding-right: 10px;"})
-		@Html.EditorFor(model => model.Price)<br>
-		@Html.LabelFor(model => model.Description, new { style = "padding-right: 10px;"})
-		@Html.EditorFor(model => model.Description)<br>
-    @Html.LabelFor(model => model.DateSold, new { style = "padding-right: 10px;"})
-		@Html.EditorFor(model => model.DateSold)<br><br>
-		<input type="submit" value="Save" />
+		@Html.EditorFor(m => m.Price, new { htmlAttributes = new { placeholder = "Price", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style= "text-align: center;" } })<br><br>
+    @Html.EditorFor(m => m.DateSold, new { htmlAttributes = new { placeholder = "Date Sold", style= "text-align: center;" } })<br><br>
+		<input type="submit" id="button" value="Save" />
 	}
+</div>
+	</div>
+	</div>
+</div>
 </div>
