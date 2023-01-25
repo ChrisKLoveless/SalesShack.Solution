@@ -5,13 +5,16 @@
 @model SalesShack.Models.Promotion;
 @using SalesShack.Models;
 
-<h3>@Html.DisplayNameFor(model => model.Product.Name): @Html.DisplayFor(model => model.Product.Name)</h3>
-<h5>@Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)</h5>
-<h5>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h5>
-<h5>@Html.DisplayNameFor(model => model.StartDate): @Html.DisplayFor(model => model.StartDate)</h5>
-<h5>@Html.DisplayNameFor(model => model.EndDate): @Html.DisplayFor(model => model.EndDate)</h5>
-
-
-<p>@Html.ActionLink("Delete this Promotion", "Delete", new { id = Model.PromotionId })</p>
-
-<p>@Html.ActionLink("Edit this Promotion", "Edit", new { id = Model.PromotionId })</p>
+<div class="container" style="text-align: center;">
+  <div class="content-wrapper">
+  <div id="list">
+<h5><strong>Product:</strong> @Html.DisplayFor(model => model.Product.Name)</h5><br>
+<p><strong>Promotion Title:</strong> <em>@Html.DisplayFor(model => model.Title)</em></p>
+<p><strong>Promotion Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p>
+<p><strong>Start Date:</strong> <em>@Html.DisplayFor(model => model.StartDate)</em></p>
+<p><strong>End Date:</strong> <em>@Html.DisplayFor(model => model.EndDate)</em></p><br>
+<p style="color: black;">@Html.ActionLink("Edit this Promotion", "Edit", new { id = Model.PromotionId })</p>
+<p style="color: black;">@Html.ActionLink("Delete this Promotion", "Delete", new { id = Model.PromotionId })</p>
+  </div>
+  </div>
+</div>

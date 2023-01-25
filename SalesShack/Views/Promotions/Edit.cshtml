@@ -4,22 +4,22 @@
 
 @model SalesShack.Models.Promotion;
 
-<div class="page-header">
-	<h1>Edit</h1>
-	<hr>
-</div>
-
+<div class="container" style="text-align: center;">
+  <div class="content-wrapper">
+  <div id="list">
+<h5><strong>Edit this Promotion!</strong></h5><br>
 <div id="form">
-	<h4>Edit this Promotion: @Html.DisplayFor(model => model.Title)</h4>
 	@using (Html.BeginForm())
 	{
 		@Html.HiddenFor(model => model.PromotionId)
 
-		@Html.LabelFor(model => model.Title)
-		@Html.EditorFor(model => model.Title)<br>
-		@Html.LabelFor(model => model.Description)
-		@Html.EditorFor(model => model.Description)<br>
-		<input type="submit" value="Save" />
+		@Html.EditorFor(m => m.Title, new { htmlAttributes = new { placeholder = "Title", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.StartDate, new { htmlAttributes = new { placeholder = "Start Date", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.EndDate, new { htmlAttributes = new { placeholder = "End Date", style= "text-align: center;" } })<br><br>
+		<input type="submit" id="button" value="Save" />
 	}
 </div>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+	</div>
+	</div>
+</div>

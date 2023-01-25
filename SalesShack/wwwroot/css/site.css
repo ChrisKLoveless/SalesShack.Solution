@@ -39,6 +39,7 @@ body {
   min-width: 320px;
   min-height: 338px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .container-fluid {
@@ -112,6 +113,7 @@ li.nav-item {
     min-width: 320px;
     min-height: 338px;
     overflow: hidden;
+    margin-top: 20px;
 }
 
 #button {
