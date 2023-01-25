@@ -7,18 +7,18 @@
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
   <div id="list">
-  <h5><strong>Promotions!</strong></h5><br>
+  <h4><strong>Promotions!</strong></h4><br>
 
     @if (Model.Count == 0)
     {
-      <p>No Promotions have been added yet</p>
+      <p>No promotions have been added yet</p>
     }
     else
     {
       <ul>
         @foreach (Promotion promotion in Model)
         {
-              <li style="list-style-position: inside;">@promotion.Product.Name | <strong>@Html.ActionLink(@promotion.Title, "Details", "Promotions", new { id = @promotion.PromotionId})</strong></li><br>
+              <li style="list-style-position: inside;">@promotion.Product.Name | <strong>@Html.ActionLink(@promotion.Title, "Details", "Promotions", new { id = @promotion.PromotionId})</strong></li>
         }
       </ul>
     }
