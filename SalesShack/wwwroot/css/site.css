@@ -15,15 +15,15 @@ html {
 
 body {
   color: rgb(143, 112, 74);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-image: url(../img/background.jpg);
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 60px;
 }
 
 .card {
-  border-color: #07692E;
+  border-color: #07692e;
   border-width: 2px;
   margin: 5px;
 }
@@ -38,7 +38,7 @@ body {
   margin-bottom: 28px;
   background-color: #fff;
   -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-  -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
   min-width: 320px;
   min-height: 338px;
@@ -51,7 +51,7 @@ body {
 }
 
 #list {
-text-align: center;
+  text-align: center;
 }
 
 #logo {
@@ -71,7 +71,6 @@ li.nav-item {
 
 #form {
   text-align: center;
-  
 }
 
 #border {
@@ -86,9 +85,8 @@ li.nav-item {
   width: 70px;
   height: 70px;
   position: relative;
-  top: -15px; 
+  top: -15px;
 }
-
 
 #login-form {
   display: flex;
@@ -99,21 +97,21 @@ li.nav-item {
 }
 
 #login-box {
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    max-width: 400px;
-    width: calc(100% - 40px);
-    padding: 44px;
-    margin-bottom: 28px;
-    background-color: #fff;
-    -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-    min-width: 320px;
-    min-height: 338px;
-    overflow: hidden;
-    margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 400px;
+  width: calc(100% - 40px);
+  padding: 44px;
+  margin-bottom: 28px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+  min-width: 320px;
+  min-height: 338px;
+  overflow: hidden;
+  margin-top: 20px;
 }
 
 #button {
@@ -128,30 +126,30 @@ li.nav-item {
   border: 1px solid;
   border-radius: 6px;
   color: #ffffff;
-  background-color: #07692E;
+  background-color: #07692e;
   border-color: #1b1f2326;
-  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px,
+    rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   transition-property: color, background-color, border-color;
-  
 }
 
 #create-box {
   margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    max-width: 400px;
-    width: calc(100% - 40px);
-    padding: 44px;
-    margin-bottom: 28px;
-    background-color: #fff;
-    -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-    min-width: 320px;
-    min-height: 338px;
-    overflow: hidden;
-    text-align: center;
+  margin-right: auto;
+  position: relative;
+  max-width: 400px;
+  width: calc(100% - 40px);
+  padding: 44px;
+  margin-bottom: 28px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+  min-width: 320px;
+  min-height: 338px;
+  overflow: hidden;
+  text-align: center;
 }
 
 footer.marquee {
@@ -160,5 +158,3 @@ footer.marquee {
   left: 0px;
   width: 100%;
 }
-
-

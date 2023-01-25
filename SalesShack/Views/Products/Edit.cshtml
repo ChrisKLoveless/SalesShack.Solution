@@ -1,23 +1,25 @@
 @{
-  ViewData["Title"] = "Edit Product";
+	ViewData["Title"] = "Edit Product";
 }
 
 @model SalesShack.Models.Product;
 
 <div class="container" style="text-align: center;">
-  <div class="content-wrapper">
-  <div id="list">
-<h5><strong>Edit this Product!</strong></h5><br>
-<div id="form">
-	@using (Html.BeginForm())
-	{
-		@Html.HiddenFor(model => model.ProductId)
+	<div class="content-wrapper">
+		<div id="list">
+			<h5><strong>Edit this Product!</strong></h5><br>
+			<div id="form">
+				@using (Html.BeginForm())
+				{
+					@Html.HiddenFor(model => model.ProductId)
 
-		@Html.EditorFor(m => m.Name, new { htmlAttributes = new { placeholder = "Name", style= "text-align: center;" } })<br><br>
-		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style= "text-align: center;" } })<br><br>
-		<input type="submit" id="button" value="Save" />
-	}
-</div>
-	</div>
+					@Html.EditorFor(m => m.Name, new { htmlAttributes = new { placeholder = "Name", style= "text-align: center;" }
+				})<br><br>
+					@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style=
+				"text-align: center;" } })<br><br>
+					<input type="submit" id="button" value="Save" />
+				}
+			</div>
+		</div>
 	</div>
 </div>

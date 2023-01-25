@@ -7,16 +7,16 @@
 
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
-  <div id="list">
-<h5><strong>Client Details!</strong></h5><br>
-<p><strong>Name:</strong>  <em>@Html.DisplayFor(model => model.Name)</em></p>
-<p><strong>Company:</strong>  <em>@Html.DisplayFor(model => model.Company)</em></p>
-<p><strong>Phone Number:</strong>  <em>@Html.DisplayFor(model => model.PhoneNumber)</em></p><br>
+    <div id="list">
+      <h5><strong>Client Details!</strong></h5><br>
+      <p><strong>Name:</strong> <em>@Html.DisplayFor(model => model.Name)</em></p>
+      <p><strong>Company:</strong> <em>@Html.DisplayFor(model => model.Company)</em></p>
+      <p><strong>Phone Number:</strong> <em>@Html.DisplayFor(model => model.PhoneNumber)</em></p><br>
 
-<p>@Html.ActionLink("Edit this Client", "Edit", new { id = Model.ClientId })</p>
+      <p>@Html.ActionLink("Edit this Client", "Edit", new { id = Model.ClientId })</p>
 
-<p>@Html.ActionLink("Delete this Client", "Delete", new { id = Model.ClientId })</p>
+      <p>@Html.ActionLink("Delete this Client", "Delete", new { id = Model.ClientId })</p>
 
-  </div>
+    </div>
   </div>
 </div>
