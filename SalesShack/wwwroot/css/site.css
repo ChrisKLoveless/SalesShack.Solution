@@ -13,9 +13,13 @@ html {
   min-height: 100%;
 }
 
+a {
+  color: whitesmoke;
+}
+
 body {
 
-  color: rgb(143, 112, 74);
+  color: #C7B082;
   font-family: "Poppins", sans-serif;
   background-image: url(../img/background.jpeg);
   background-size: cover;
@@ -24,7 +28,8 @@ body {
 }
 
 .card {
-  border-color: #07692e;
+  border-color: #C7B082;
+  background-color: #3E4736;
   border-width: 2px;
   margin: 5px;
 }
@@ -47,6 +52,8 @@ body {
   min-height: 338px;
   overflow: hidden;
   margin-top: 20px;
+  color: black;
+  font-weight: bold;
 }
 
 #home-list {
@@ -74,6 +81,8 @@ li.nav-item {
 
 #form {
   text-align: center;
+  color: black;
+  font-weight: bold;
 }
 
 #border {
@@ -118,6 +127,8 @@ li.nav-item {
     min-height: 338px;
     overflow: hidden;
     margin-top: 20px;
+    color: black;
+    font-weight: bold;
 }
 
 #button {
@@ -131,8 +142,8 @@ li.nav-item {
   vertical-align: middle;
   border: 1px solid;
   border-radius: 6px;
-  color: #ffffff;
-  background-color: #07692e;
+  color: #C7B082;
+  background-color: #3E4736;
   border-color: #1b1f2326;
   box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px 0px,
     rgba(255, 255, 255, 0.25) 0px 1px 0px 0px inset;
@@ -158,6 +169,8 @@ li.nav-item {
     min-height: 338px;
     overflow: hidden;
     text-align: center;
+    color: black;
+    font-weight: bold;
 }
 
 #navbar a {
