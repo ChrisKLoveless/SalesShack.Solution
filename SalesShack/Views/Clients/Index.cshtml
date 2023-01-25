@@ -4,31 +4,34 @@
 
 @using SalesShack.Models;
 
-<div class="container">
-  <div id="list">
-  <h3>List of Clients</h3>
+<div class="container" style="text-align: center;">
+  <div class="content-wrapper">
+    <div id="list">
+      <h3>List of Clients</h3>
 
-    @if (Model.Count == 0)
-    {
-      <h3>No Clients have been added yet</h3>
-    }
-    else
-    {
-      <ul>
-        @foreach (Client client in Model)
-        {
-          <div class="card" style="width: 14rem;">
-            @* <img
-          src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-client-pet-care-icongeek26-outline-colour-icongeek26.png"
-          class="card-img-top" alt="example client image"> *@
-            <div class="card-body">
-              <h5 class="card-title"><strong>Name:</strong> @client.Name <strong>Company:</strong>@client.Company <strong>Phone Number:</strong>@client.PhoneNumber</h5>
+      @if (Model.Count == 0)
+      {
+        <h3>No Clients have been added yet</h3>
+      }
+      else
+      {
+        <ul>
+          @foreach (Client client in Model)
+          {
+            <div class="card" style="width: 14rem;">
+              @* <img
+                src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-client-pet-care-icongeek26-outline-colour-icongeek26.png"
+                class="card-img-top" alt="example client image"> *@
+              <div class="card-body">
+                <h5 class="card-title"><strong>Name:</strong> @client.Name <strong>Company:</strong>@client.Company
+                  <strong>Phone Number:</strong>@client.PhoneNumber</h5>
+              </div>
             </div>
-          </div>
-        }
-        
-      </ul>
-    }
+          }
+
+        </ul>
+      }
+    </div>
     <p>@Html.ActionLink("Add a new client", "Create")</p>
 
   </div>

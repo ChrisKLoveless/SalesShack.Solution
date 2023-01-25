@@ -15,7 +15,30 @@ html {
 
 body {
   margin-bottom: 60px;
-  background-color: whitesmoke
+  background-color: whitesmoke;
+}
+
+.card {
+  border-color: #07692E;
+  border-width: 2px;
+  margin: 5px;
+}
+
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  max-width: 400px;
+  width: calc(100% - 40px);
+  padding: 44px;
+  margin-bottom: 28px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+  min-width: 320px;
+  min-height: 338px;
+  overflow: hidden;
 }
 
 .container-fluid {
