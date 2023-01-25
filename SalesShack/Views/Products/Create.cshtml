@@ -4,21 +4,15 @@
 
 @model SalesShack.Models.Product;
 
-<div class="page-header">
-	<h1>Add a product!</h1>
-	<hr>
-</div>
-
 <p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 
 <div id="create-box">
 	@using (Html.BeginForm())
 	{
-		@Html.TextBoxFor(model => model.Name, new { placeholder = "Name", style = "text-align: center;"})<br><br>
-		@Html.TextBoxFor(model => model.Description, new { placeholder = "Description", style = "text-align: center;"})<br><br>
-		<input type="submit" value="Add" />
+		<h4 style="text-align: center;">Add a product!</h4><br>
+		@Html.EditorFor(m => m.Name, new { htmlAttributes = new { placeholder = "Name", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style= "text-align: center;" } })<br><br>
+		<input type="submit" id="button" value="Add" />
 	}
 </div>
-
-<br><p style="text-align: center;">@Html.ActionLink("Back to List", "Index")</p>
