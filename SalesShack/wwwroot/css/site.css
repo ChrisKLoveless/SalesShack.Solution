@@ -17,7 +17,7 @@ body {
   color: rgb(143, 112, 74);
   font-family: 'Poppins', sans-serif;
   background-image: url(../img/background.jpg);
-  background-size:contain;
+  background-size:cover;
   background-repeat: no-repeat;
   margin-bottom: 60px;
 }
@@ -117,7 +117,6 @@ li.nav-item {
 }
 
 #button {
-
   display: inline-block;
   outline: 0;
   cursor: pointer;
@@ -154,4 +153,12 @@ li.nav-item {
     overflow: hidden;
     text-align: center;
 }
+
+footer.marquee {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+
 
