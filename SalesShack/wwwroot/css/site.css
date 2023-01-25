@@ -14,6 +14,7 @@ html {
 }
 
 body {
+
   color: rgb(143, 112, 74);
   font-family: "Poppins", sans-serif;
   background-image: url(../img/background.jpg);
@@ -36,7 +37,9 @@ body {
   width: calc(100% - 40px);
   padding: 44px;
   margin-bottom: 28px;
-  background-color: #fff;
+  background-image: url("../img/wood.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
   -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
   -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
@@ -60,7 +63,7 @@ body {
 }
 
 li.nav-item {
-  font-size: 15.4px;
+  font-size: 17px;
 }
 
 .row {
@@ -97,21 +100,24 @@ li.nav-item {
 }
 
 #login-box {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  max-width: 400px;
-  width: calc(100% - 40px);
-  padding: 44px;
-  margin-bottom: 28px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-  min-width: 320px;
-  min-height: 338px;
-  overflow: hidden;
-  margin-top: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 400px;
+    width: calc(100% - 40px);
+    padding: 44px;
+    margin-bottom: 28px;
+    background-image: url("../img/wood.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    min-width: 320px;
+    min-height: 338px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 #button {
@@ -136,20 +142,27 @@ li.nav-item {
 
 #create-box {
   margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  max-width: 400px;
-  width: calc(100% - 40px);
-  padding: 44px;
-  margin-bottom: 28px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
-  min-width: 320px;
-  min-height: 338px;
-  overflow: hidden;
-  text-align: center;
+    margin-right: auto;
+    position: relative;
+    max-width: 400px;
+    width: calc(100% - 40px);
+    padding: 44px;
+    margin-bottom: 28px;
+    background-image: url("../img/wood.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+    min-width: 320px;
+    min-height: 338px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#navbar a {
+  text-decoration: underline;
+  color: #C7B082;
 }
 
 footer.marquee {
@@ -158,3 +171,4 @@ footer.marquee {
   left: 0px;
   width: 100%;
 }
+
