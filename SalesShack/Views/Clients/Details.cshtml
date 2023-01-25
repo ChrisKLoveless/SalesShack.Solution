@@ -13,9 +13,10 @@
 <p><strong>Company:</strong>  <em>@Html.DisplayFor(model => model.Company)</em></p>
 <p><strong>Phone Number:</strong>  <em>@Html.DisplayFor(model => model.PhoneNumber)</em></p><br>
 
+<p>@Html.ActionLink("Edit this Client", "Edit", new { id = Model.ClientId })</p>
+
 <p>@Html.ActionLink("Delete this Client", "Delete", new { id = Model.ClientId })</p>
 
-<p>@Html.ActionLink("Edit this Client", "Edit", new { id = Model.ClientId })</p>
   </div>
   </div>
 </div>
