@@ -2,15 +2,15 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SalesShack.ViewModels
 {
-  public class LoginViewModel
-  {
-    [Required]
-    [EmailAddress]
-    [Display(Name = "Email Address")]
-    public string Email { get; set; }
+    public class LoginViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email Address")]
+        public string Email { get; set; }
 
-    [Required]
-    [DataType(DataType.Password)]
-    public string Password { get; set; }
-  }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+    }
 }

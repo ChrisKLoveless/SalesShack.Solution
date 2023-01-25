@@ -7,30 +7,30 @@
 
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
-  <div id="list">
-    <h5><strong>Product Details!</strong></h5><br>
-    <p><strong>Name:</strong>  <em>@Html.DisplayFor(model => model.Name)</em></p>
-    <p><strong>Description:</strong>  <em>@Html.DisplayFor(model => model.Description)</em></p>
-    <hr>
-  @if (@Model.Sales.Count == 0)
-  {
-    <p>This product has no sales!</p>
-  }
-  else
-  {
-    @foreach (Sale sale in Model.Sales)
-    {
-      <p><strong>Price Sold For:</strong> $@Html.ActionLink(@sale.Price.ToString(), "Details", "Sales", new { id = @sale.SaleId}) </p>
-    }
-    @foreach (Promotion promotion in Model.Promotions)
-    {
-      <p><strong>Promotions:</strong> @Html.ActionLink(@promotion.Title, "Details", "Promotions", new { id = @promotion.PromotionId})</p><br>
-    }
-  }
-</div>
-<p>@Html.ActionLink("Edit this Product", "Edit", new { id = Model.ProductId })</p>
-<p>@Html.ActionLink("Delete this Product", "Delete", new { id = Model.ProductId })</p>
+    <div id="list">
+      <h5><strong>Product Details!</strong></h5><br>
+      <p><strong>Name:</strong> <em>@Html.DisplayFor(model => model.Name)</em></p>
+      <p><strong>Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p>
+      <hr>
+      @if (@Model.Sales.Count == 0)
+      {
+        <p>This product has no sales!</p>
+      }
+      else
+      {
+        @foreach (Sale sale in Model.Sales)
+        {
+          <p><strong>Price Sold For:</strong> $@Html.ActionLink(@sale.Price.ToString(), "Details", "Sales", new { id =
+        @sale.SaleId}) </p>
+        }
+        @foreach (Promotion promotion in Model.Promotions)
+        {
+          <p><strong>Promotions:</strong> @Html.ActionLink(@promotion.Title, "Details", "Promotions", new { id =
+        @promotion.PromotionId})</p><br>
+        }
+      }
+    </div>
+    <p>@Html.ActionLink("Edit this Product", "Edit", new { id = Model.ProductId })</p>
+    <p>@Html.ActionLink("Delete this Product", "Delete", new { id = Model.ProductId })</p>
   </div>
 </div>
-
-

@@ -1,24 +1,24 @@
 @{
-  ViewData["Title"] = "Client Delete";
+	ViewData["Title"] = "Client Delete";
 }
 
 @model SalesShack.Models.Client;
 
 
 <div class="container" style="text-align: center;">
-  <div class="content-wrapper">
-  <div id="list">
-<h5><strong>Are you sure?</strong></h5><br>
-<div id="form">
-	<p><strong>Client Name:</strong> <em>@Html.DisplayFor(model => model.Name)</em></p>
-	<p><strong>Client Company:</strong> <em>@Html.DisplayFor(model => model.Company)</em></p>
-	<p><strong>Client Phone Number:</strong> <em>@Html.DisplayFor(model => model.PhoneNumber)</em></p><br>
-	@using (Html.BeginForm())
-	{
-		<input type="submit" value="Delete" id="button" />
-	}
-</div>
-	</div>
+	<div class="content-wrapper">
+		<div id="list">
+			<h5><strong>Are you sure?</strong></h5><br>
+			<div id="form">
+				<p><strong>Client Name:</strong> <em>@Html.DisplayFor(model => model.Name)</em></p>
+				<p><strong>Client Company:</strong> <em>@Html.DisplayFor(model => model.Company)</em></p>
+				<p><strong>Client Phone Number:</strong> <em>@Html.DisplayFor(model => model.PhoneNumber)</em></p><br>
+				@using (Html.BeginForm())
+				{
+					<input type="submit" value="Delete" id="button" />
+				}
+			</div>
+		</div>
 	</div>
 </div>
 

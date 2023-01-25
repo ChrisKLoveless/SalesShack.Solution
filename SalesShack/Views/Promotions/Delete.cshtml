@@ -1,22 +1,22 @@
 @{
-  ViewData["Title"] = "Promotion Delete";
+	ViewData["Title"] = "Promotion Delete";
 }
 
 @model SalesShack.Models.Promotion;
 
 <div class="container" style="text-align: center;">
-  <div class="content-wrapper">
-  <div id="list">
-<h5><strong>Are you sure?</strong></h5><br>
-<div id="form">
-	<p><strong>Promotion Title:</strong> <em>@Html.DisplayFor(model => model.Title)</em></p>
-	<p><strong>Promotion Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p><br>
-	@using (Html.BeginForm())
-	{
-		<input type="submit" value="Delete" id="button" />
-	}
-</div>
-	</div>
+	<div class="content-wrapper">
+		<div id="list">
+			<h5><strong>Are you sure?</strong></h5><br>
+			<div id="form">
+				<p><strong>Promotion Title:</strong> <em>@Html.DisplayFor(model => model.Title)</em></p>
+				<p><strong>Promotion Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p><br>
+				@using (Html.BeginForm())
+				{
+					<input type="submit" value="Delete" id="button" />
+				}
+			</div>
+		</div>
 	</div>
 </div>
 </div>

@@ -7,16 +7,16 @@
 
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
-  <div id="list">
-<h5><strong>Product:</strong> @Html.DisplayFor(model => model.Product.Name)</h5><br>
-<p><strong>Sale Price:</strong> <em>@Html.DisplayFor(model => model.Price)</em></p>
-<p><strong>Sale Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p>
-<p><strong>Date Sold:</strong> <em>@Html.DisplayFor(model => model.DateSold)</em></p><br>
+    <div id="list">
+      <h5><strong>Product:</strong> @Html.DisplayFor(model => model.Product.Name)</h5><br>
+      <p><strong>Sale Price:</strong> <em>@Html.DisplayFor(model => model.Price)</em></p>
+      <p><strong>Sale Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p>
+      <p><strong>Date Sold:</strong> <em>@Html.DisplayFor(model => model.DateSold)</em></p><br>
 
-<p>@Html.ActionLink("Edit this Sale", "Edit", new { id = Model.SaleId })</p>
+      <p>@Html.ActionLink("Edit this Sale", "Edit", new { id = Model.SaleId })</p>
 
-<p>@Html.ActionLink("Delete this Sale", "Delete", new { id = Model.SaleId })</p>
+      <p>@Html.ActionLink("Delete this Sale", "Delete", new { id = Model.SaleId })</p>
 
-  </div>
+    </div>
   </div>
 </div>

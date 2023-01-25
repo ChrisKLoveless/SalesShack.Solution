@@ -41,7 +41,7 @@ namespace SalesShack.Controllers
             {
                 return View(model);
             }
-            else 
+            else
             {
                 User user = new User { UserName = model.Email };
                 IdentityResult result = await _userManager.CreateAsync(user, model.Password);
