@@ -4,18 +4,21 @@
 
 
 <div id="form">
+<div id = "login-box">
+<img class="login-logo" src="../img/logo-color.png">
   @if (User.Identity.IsAuthenticated)
   {
-    <h2>Hello @User.Identity.Name!</h2>
+    <br><br><h5>Hello @User.Identity.Name!</h5><br>
     @using (Html.BeginForm("LogOff", "Account"))
     {
-      <input type="submit" class="btn btn-danger" value="Log out" />
+      <input type="submit" id="button" value="Log out" /><br><br>
     }
   }
   else
   {
-    <p>@Html.ActionLink("Register", "Register")</p>
+    <br><br><p>@Html.ActionLink("Sign Up", "Register")</p>
     <p>@Html.ActionLink("Log in", "Login")</p>
   }
-  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+  
+</div>
 </div>

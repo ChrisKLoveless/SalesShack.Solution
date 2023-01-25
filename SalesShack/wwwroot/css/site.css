@@ -94,6 +94,7 @@ li.nav-item {
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 #login-box {
@@ -149,5 +150,6 @@ li.nav-item {
     min-width: 320px;
     min-height: 338px;
     overflow: hidden;
+    text-align: center;
 }
 
