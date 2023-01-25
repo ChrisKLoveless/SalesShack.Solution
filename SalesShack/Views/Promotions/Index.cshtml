@@ -7,7 +7,7 @@
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
   <div id="list">
-  <h5><strong>Promotions!</strong></h5>
+  <h5><strong>Promotions!</strong></h5><br>
 
     @if (Model.Count == 0)
     {
@@ -18,15 +18,7 @@
       <ul>
         @foreach (Promotion promotion in Model)
         {
-          <div class="card" style="text-align: center; width: 15rem;">
-            @* <img
-          src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-promotion-pet-care-icongeek26-outline-colour-icongeek26.png"
-          class="card-img-top" alt="example promotion image"> *@
-            <div class="card-body">
-              <p class="card-title">@promotion.Product.Name | <strong>@promotion.Title</strong></p><br>
-              <p class="btn btn-light">@Html.ActionLink("Details", "Details", "Promotions", new { id = @promotion.PromotionId})</p>
-            </div>
-          </div>
+              <li style="list-style-position: inside;">@promotion.Product.Name | <strong>@Html.ActionLink(@promotion.Title, "Details", "Promotions", new { id = @promotion.PromotionId})</strong></li><br>
         }
       </ul>
     }
