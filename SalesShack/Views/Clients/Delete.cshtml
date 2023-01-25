@@ -4,18 +4,22 @@
 
 @model SalesShack.Models.Client;
 
-<div class="page-header">
-	<h1>Delete</h1>
-	<hr>
-</div>
 
-<h3>Are you sure?</h3>
+<div class="container" style="text-align: center;">
+  <div class="content-wrapper">
+  <div id="list">
+<h5><strong>Are you sure?</strong></h5><br>
 <div id="form">
-	@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
-	@Html.DisplayNameFor(model => model.Company): @Html.DisplayFor(model => model.Company)
-	@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)
+	<p><strong>Client Name:</strong> <em>@Html.DisplayFor(model => model.Name)</em></p>
+	<p><strong>Client Company:</strong> <em>@Html.DisplayFor(model => model.Company)</em></p>
+	<p><strong>Client Phone Number:</strong> <em>@Html.DisplayFor(model => model.PhoneNumber)</em></p><br>
 	@using (Html.BeginForm())
 	{
-		<input type="submit" value="Delete" class="btn btn-danger" />
+		<input type="submit" value="Delete" id="button" />
 	}
+</div>
+	</div>
+	</div>
+</div>
+
 </div>

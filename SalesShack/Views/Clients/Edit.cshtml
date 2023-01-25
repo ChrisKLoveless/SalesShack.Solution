@@ -4,24 +4,21 @@
 
 @model SalesShack.Models.Client;
 
-<div class="page-header">
-	<h1>Edit</h1>
-	<hr>
-</div>
-
+<div class="container" style="text-align: center;">
+  <div class="content-wrapper">
+  <div id="list">
+<h5><strong>Edit this Client!</strong></h5><br>
 <div id="form">
-	<h4>Edit this Client: @Html.DisplayFor(model => model.Name)</h4>
 	@using (Html.BeginForm())
 	{
 		@Html.HiddenFor(model => model.ClientId)
 
-		@Html.LabelFor(model => model.Name)
-		@Html.EditorFor(model => model.Name)<br>
-		@Html.LabelFor(model => model.Company)
-		@Html.EditorFor(model => model.Company)<br>
-		@Html.LabelFor(model => model.PhoneNumber)
-		@Html.EditorFor(model => model.PhoneNumber)<br>
-		<input type="submit" value="Save" />
+		@Html.EditorFor(m => m.Name, new { htmlAttributes = new { placeholder = "Name", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.Company, new { htmlAttributes = new { placeholder = "Company", style= "text-align: center;" } })<br><br>
+		@Html.EditorFor(m => m.PhoneNumber, new { htmlAttributes = new { placeholder = "PhoneNumber", style= "text-align: center;" } })<br><br>
+		<input type="submit" value="Save" id="button"/>
 	}
 </div>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+	</div>
+	</div>
+</div>
