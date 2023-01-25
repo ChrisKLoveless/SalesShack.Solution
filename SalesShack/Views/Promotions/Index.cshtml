@@ -7,11 +7,11 @@
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
   <div id="list">
-  <h3>List of Promotions</h3>
+  <h5><strong>Promotions!</strong></h5>
 
     @if (Model.Count == 0)
     {
-      <h3>No Promotions have been added yet</h3>
+      <p>No Promotions have been added yet</p>
     }
     else
     {
@@ -23,7 +23,7 @@
           src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-promotion-pet-care-icongeek26-outline-colour-icongeek26.png"
           class="card-img-top" alt="example promotion image"> *@
             <div class="card-body">
-              <h5 class="card-title"><strong>@promotion.Product.Name</strong> | @promotion.Title</h5><br>
+              <p class="card-title">@promotion.Product.Name | <strong>@promotion.Title</strong></p><br>
               <p class="btn btn-light">@Html.ActionLink("Details", "Details", "Promotions", new { id = @promotion.PromotionId})</p>
             </div>
           </div>
