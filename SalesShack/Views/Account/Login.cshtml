@@ -16,7 +16,7 @@
   {
    <h5><strong>Login</strong></h5>
    <br><em> @Html.TextBoxFor(m => m.Email, new { placeholder = "Email Addresss", style="text-align: center;"})<br><br></em>
-   <input type="password" style="text-align: center;" placeholder="Password" @Html.EditorFor(m => m.Password)><br><br>
+   @Html.EditorFor(m => m.Password, new { htmlAttributes = new { placeholder = "Password", style= "text-align: center;" } })<br><br>
    <input type="submit" value="Log in" id="button"/><br>
   }
   <br><p style="margin-left: 25px;">Dont have an account yet? @Html.ActionLink("Sign up!", "Register")</p>
