@@ -9,7 +9,6 @@ using SalesShack.Models;
 
 namespace SalesShack.Controllers
 {
-    [Authorize(Roles = "User")]
 
     public class SalesController : Controller
     {

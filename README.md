@@ -52,10 +52,16 @@ This team week project was completed during the C# and .NET 6 section of the cou
 2. Click the ```Create a Role``` button and create roles for ```Administrator``` and ```User```
 3. Back in the index view click the ```update``` button and select available users to apply a role.
 
+## Stretch Goals
+
+* Adding an api to the web app.
+* Categories for products.
+* Seeding data for ease of access.
+* Add images to product cards.
+
 ## Known Bugs
-
+* After assigning a role, the user must log out and back in to their account in order for role to apply.
 * If any bugs are found please email a brief description to: ```chriskloveless@gmail.com``` or ```yoonismahamoudali@gmail.com```
-
 
 ## License
 Copyright (c) 2022 Chris Loveless and Yoonis Ali
