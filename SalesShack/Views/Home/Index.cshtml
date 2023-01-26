@@ -5,60 +5,56 @@
 @using SalesShack.Models;
 
 
-@if(User.Identity.IsAuthenticated)
+@if (User.Identity.IsAuthenticated)
 {
-<div class="text-center">
-	<h1 class="display-4">Welcome</h1>
-	<hr>
-	<h2><em>Hello @User.Identity.Name!</em></h2>
-	<hr>
-</div>
+
+	<br><h4 style="text-align: center;">Hello @User.Identity.Name! | Welcome to Sales Shack!</h4>
 
 	<div class="row">
-<div class="content-wrapper">
-		<div class="col-6" id="home-list">
-			<h4><u>Products</u></h4>
+	<div class="content-wrapper">
+		<div class="col-6">
+			<h4 style="padding-left: 100px;"><u>Products</u></h4>
 			@if (Model["Products"].Length == 0)
-			{
-				<p>No Products have been added yet!</p>
-			}
-
-			@foreach (Product product in Model["Products"])
-			{
-				<div class="card" style="width: 10rem;">
-					<div class="card-body">
-						<h5 class="card-title"><strong>@product.Name</strong></h5>
-						<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Products", new { id = @product.ProductId})
-						</p>
+				{
+					<p style="text-align: center;">No products have been added yet!</p>
+				}
+				
+				<ul style="padding-left: 70px;">
+				@foreach (Product product in Model["Products"])
+				{
+					<div class="card" style="width: 10rem;">
+						<div class="card-body">
+							<li class="card-title" style="list-style-position: inside; padding-left: 18px;"><strong>@Html.ActionLink(product.Name, "Details", "Products", new { id = @product.ProductId})</strong></li>
+						</div>
 					</div>
-
-				</div>
-			}
-		</div>
+				}
+				</ul>
+			</div>
 		</div>
 		<div class="content-wrapper">
-		<div class="col-6 " id="home-list">
-			<h4><u>Promotions</u></h4>
-			@if (Model["Promotions"].Length == 0)
-			{
-				<p>No Promotions have been added yet!</p>
-			}
+			<div class="col-6 ">
+				<h4 style="padding-left: 100px;"><u>Promotions</u></h4>
+				@if (Model["Promotions"].Length == 0)
+				{
+					<p>No promotions have been added yet!</p>
+				}
 
-			@foreach (Promotion promotion in Model["Promotions"])
-			{
-				<div class="card" style="width: 10rem;">
-					<div class="card-body">
-						<h5 class="card-title"><strong>@promotion.Title</strong></h5>
-						<p class="btn btn-light">@Html.ActionLink("Details", "Details", "Promotions", new { id =
-						@promotion.PromotionId})</p>
+				<ul style="padding-left: 80px;">
+				@foreach (Promotion promotion in Model["Promotions"])
+				{
+					<div class="card" style="width: 10rem;">
+						<div class="card-body">
+							<li class="card-title" style="list-style-position: inside; padding-left: 18px;"><strong>@Html.ActionLink(@promotion.Title, "Details", "Promotions", new { id =
+						@promotion.PromotionId})</strong></li>
+						</div>
 					</div>
-				</div>
-			}
+				}
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
 }
 else
 {
-	<p style="margin-left: 25px;">Dont have an account yet? @Html.ActionLink("Sign up!", "Register")</p>
+	<p style="margin-left: 375px;">Dont have an account yet? @Html.ActionLink("Sign up!", "Register", "Account")</p>
 }

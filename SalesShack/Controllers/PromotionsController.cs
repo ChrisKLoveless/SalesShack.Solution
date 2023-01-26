@@ -17,6 +17,7 @@ namespace SalesShack.Controllers
             _db = db;
         }
 
+
         [Authorize(Roles = "Administrator, User")]
         public ActionResult Index()
         {
@@ -24,12 +25,14 @@ namespace SalesShack.Controllers
             return View(promotions);
         }
 
+
         [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             ViewBag.ProductId = new SelectList(_db.Products, "ProductId", "Name");
             return View();
         }
+
 
         [Authorize(Roles = "Administrator")]
         [HttpPost]
@@ -48,6 +51,7 @@ namespace SalesShack.Controllers
             }
         }
 
+
         [Authorize(Roles = "Administrator, User")]
         public ActionResult Details(int id)
         {
@@ -58,14 +62,12 @@ namespace SalesShack.Controllers
             return View(thisPromotion);
         }
 
-
         [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int id)
         {
             Promotion thisPromotion = _db.Promotions.FirstOrDefault(promotion => promotion.PromotionId == id);
             return View(thisPromotion);
         }
-
 
         [Authorize(Roles = "Administrator")]
         [HttpPost]
@@ -83,7 +85,6 @@ namespace SalesShack.Controllers
             return View(thisPromotion);
         }
 
-        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {

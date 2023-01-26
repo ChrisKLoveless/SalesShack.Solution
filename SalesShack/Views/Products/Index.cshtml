@@ -6,30 +6,28 @@
 
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
-  <div id="list">
-  <h3>List of Products</h3>
+    <div id="list">
+      <h4><strong>Products!</strong></h4><br>
 
-    @if (Model.Count == 0)
-    {
-      <h3>No Products have been added yet</h3>
-    }
-    else
-    {
-      <ul>
-        @foreach (Product product in Model)
-        {
-          <div class="card" style="width: 10rem;">
-            @* <img
-          src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-product-pet-care-icongeek26-outline-colour-icongeek26.png"
-          class="card-img-top" alt="example product image"> *@
-            <div class="card-body">
-              <h5 class="card-title"><strong>@product.Name</strong>: @product.Description</h5>
-              <p class="btn btn-light">@Html.ActionLink("Details", "Details", "Products", new { id = @product.ProductId})</p>
+
+      @if (Model.Count == 0)
+      {
+        <p>No products have been added yet</p>
+      }
+      else
+      {
+        <ul style="padding-left: 70px;">
+          @foreach (Product product in Model)
+          {
+            <div class="card" style="width: 10rem;">
+              <div class="card-body">
+                <li class="card-title" style="list-style-position: inside;"><strong>@Html.ActionLink(@product.Name,
+                "Details", "Products", new { id = @product.ProductId})</strong></li>
+              </div>
             </div>
-          </div>
-        }
-      </ul>
-    }
+          }
+        </ul>
+      }
     </div>
     <p>@Html.ActionLink("Create a new Product", "Create")</p>
   </div>

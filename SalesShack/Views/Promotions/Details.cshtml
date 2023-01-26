@@ -7,14 +7,14 @@
 
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
-  <div id="list">
-<h5><strong>Product:</strong> @Html.DisplayFor(model => model.Product.Name)</h5><br>
-<p><strong>Promotion Title:</strong> <em>@Html.DisplayFor(model => model.Title)</em></p>
-<p><strong>Promotion Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p>
-<p><strong>Start Date:</strong> <em>@Html.DisplayFor(model => model.StartDate)</em></p>
-<p><strong>End Date:</strong> <em>@Html.DisplayFor(model => model.EndDate)</em></p><br>
-<p style="color: black;">@Html.ActionLink("Edit this Promotion", "Edit", new { id = Model.PromotionId })</p>
-<p style="color: black;">@Html.ActionLink("Delete this Promotion", "Delete", new { id = Model.PromotionId })</p>
-  </div>
+    <div id="list">
+      <h5><strong>Product:</strong> @Html.DisplayFor(model => model.Product.Name)</h5><br>
+      <p><strong>Promotion Title:</strong> <em>@Html.DisplayFor(model => model.Title)</em></p>
+      <p><strong>Promotion Description:</strong> <em>@Html.DisplayFor(model => model.Description)</em></p>
+      <p><strong>Start Date:</strong> <em>@Html.DisplayFor(model => model.StartDate)</em></p>
+      <p><strong>End Date:</strong> <em>@Html.DisplayFor(model => model.EndDate)</em></p><br>
+      <p>@Html.ActionLink("Edit this Promotion", "Edit", new { id = Model.PromotionId })</p>
+      <p>@Html.ActionLink("Delete this Promotion", "Delete", new { id = Model.PromotionId })</p>
+    </div>
   </div>
 </div>

@@ -6,31 +6,27 @@
 
 <div class="container" style="text-align: center;">
   <div class="content-wrapper">
-  <div id="list">
-  <h3>List of Sales</h3>
+    <div id="list">
+      <h4><strong>Sales!</strong></h4><br>
 
-    @if (Model.Count == 0)
-    {
-      <h3>No Sales have been added yet</h3>
-    }
-    else
-    {
-      <ul>
-        @foreach (Sale sale in Model)
-        {
-          <div class="card" style="text-align: center; width: 15rem;">
-            @* <img
-          src="https://img.icons8.com/external-icongeek26-outline-colour-icongeek26/512/external-sale-pet-care-icongeek26-outline-colour-icongeek26.png"
-          class="card-img-top" alt="example sale image"> *@
-            <div class="card-body">
-              <h5 class="card-title"><strong>@sale.Product.Name</strong> | $@sale.Price</h5><br>
-              <p class="btn btn-light">@Html.ActionLink("Details", "Details", "Sales", new { id = @sale.SaleId})</p>
-            </div>
-          </div>
-        }
-      </ul>
-    }
+      @if (Model.Count == 0)
+      {
+        <p>No sales have been added yet</p>
+      }
+      else
+      {
+        <ul>
+          @foreach (Sale sale in Model)
+          {
+            @* <li style="list-style-position: inside;">@sale.Product.Name | <strong>@Html.ActionLink(@sale.Price,
+              "Details", "Sales", new { id = @sale.SaleId})</strong></li> *@
+            <li style="list-style-position: inside; padding-right: 40px;">@sale.Product.Name |
+              $<strong>@Html.ActionLink(@sale.Price.ToString(), "Details", "Sales", new { id = @sale.SaleId})</strong></li>
+          }
+        </ul>
+      }
     </div>
     <p>@Html.ActionLink("Create a new Sale", "Create")</p>
   </div>
+</div>
 </div>
