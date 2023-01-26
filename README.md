@@ -54,7 +54,8 @@ This team week project was completed during the C# and .NET 6 section of the cou
 
 ## Known Bugs
 
-* If any bugs are found please email a brief description to: ```chriskloveless@gmail.com```
+* If any bugs are found please email a brief description to: ```chriskloveless@gmail.com``` or ```yoonismahamoudali@gmail.com```
+
 
 ## License
 Copyright (c) 2022 Chris Loveless and Yoonis Ali
