@@ -1,9 +1,11 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using SalesShack.Models;
 
 namespace SalesShack.Solution.Controllers;
 
+[Authorize(Roles = "Administrator, User")]
 public class HomeController : Controller
 {
     private readonly SalesShackContext _db;

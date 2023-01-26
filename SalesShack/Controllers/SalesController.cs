@@ -9,6 +9,8 @@ using SalesShack.Models;
 
 namespace SalesShack.Controllers
 {
+    [Authorize(Roles = "Administrator, User")]
+
     public class SalesController : Controller
     {
         private readonly SalesShackContext _db;
@@ -48,7 +50,6 @@ namespace SalesShack.Controllers
         public ActionResult Details(int id)
         {
             Sale thisSale = _db.Sales
-            // .Include(sale => sale.JoinEntities)
             .Include(s => s.Product)
             .FirstOrDefault(sale => sale.SaleId == id);
             return View(thisSale);
