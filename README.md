@@ -62,6 +62,7 @@ This team week project was completed during the C# and .NET 6 section of the cou
 
 ## Known Bugs
 * After assigning a role, the user must log out and back in to their account in order for role to apply.
+* On small view area, the menu button only works if clicked on outside.
 * If any bugs are found please email a brief description to: ```chriskloveless@gmail.com``` or ```yoonismahamoudali@gmail.com```
 
 ## License
