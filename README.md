@@ -18,6 +18,7 @@ This team week project was completed during the C# and .NET 6 section of the cou
 * _MySQL_
 * _MVC_
 * _Entity Framework Core_
+* _[Logo.com](https://logo.com/)_
 
 ## Setup/Installation Requirements
 
