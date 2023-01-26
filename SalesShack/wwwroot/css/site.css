@@ -14,7 +14,8 @@ html {
 }
 
 a {
-  color: whitesmoke;
+  color: white;
+  font-weight: bolder;
 }
 
 body {
@@ -43,7 +44,7 @@ body {
   width: calc(100% - 40px);
   padding: 44px;
   margin-bottom: 28px;
-  background-image: url("../img/wood.jpeg");
+  background-image:  linear-gradient(rgba(0, 0, 0, 0.227), rgba(0, 0, 0, 0.227)),  url("../img/wood.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
@@ -72,6 +73,7 @@ body {
 
 li.nav-item {
   font-size: 17px;
+  padding-left: 20px;
 }
 
 .row {
@@ -118,7 +120,7 @@ li.nav-item {
     width: calc(100% - 40px);
     padding: 44px;
     margin-bottom: 28px;
-    background-image: url("../img/wood.jpeg");
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.227), rgba(0, 0, 0, 0.227)), url("../img/wood.jpeg");
     background-repeat: no-repeat;
     background-size:cover;
     -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
@@ -160,7 +162,7 @@ li.nav-item {
     width: calc(100% - 40px);
     padding: 44px;
     margin-bottom: 28px;
-    background-image: url("../img/wood.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.227), rgba(0, 0, 0, 0.227)), url("../img/wood.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
@@ -175,7 +177,6 @@ li.nav-item {
 }
 
 #navbar a {
-  /* text-decoration: underline; */
   color: #C7B082;
 }
 

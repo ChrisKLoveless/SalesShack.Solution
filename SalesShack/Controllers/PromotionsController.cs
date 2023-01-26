@@ -17,8 +17,6 @@ namespace SalesShack.Controllers
             _db = db;
         }
 
-
-        [Authorize(Roles = "Administrator, User")]
         public ActionResult Index()
         {
             List<Promotion> promotions = _db.Promotions.Include(promotion => promotion.Product).ToList();
@@ -52,7 +50,6 @@ namespace SalesShack.Controllers
         }
 
 
-        [Authorize(Roles = "Administrator, User")]
         public ActionResult Details(int id)
         {
             Promotion thisPromotion = _db.Promotions
@@ -85,6 +82,7 @@ namespace SalesShack.Controllers
             return View(thisPromotion);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {

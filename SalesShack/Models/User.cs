@@ -4,6 +4,6 @@ namespace SalesShack.Models
 {
     public class User : IdentityUser
     {
-
+    
     }
 }
