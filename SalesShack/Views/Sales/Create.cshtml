@@ -7,7 +7,7 @@
 
 <p>@Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
-<p style="text-align: center;"><strong>NOTE:</strong> <p style="text-align: center;">You must @Html.ActionLink("add a product", "Create", "Products") to add a sale!</p></p>
+<p style="text-align: center;"><strong>NOTE:</strong> <p style="text-align: center;">You must @Html.ActionLink("add a product", "Create", "Products") to create a sale!</p></p>
 
 <div id="create-box">
 		@using (Html.BeginForm())

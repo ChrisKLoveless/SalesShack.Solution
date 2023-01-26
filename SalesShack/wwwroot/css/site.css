@@ -21,10 +21,11 @@ body {
 
   color: #C7B082;
   font-family: "Poppins", sans-serif;
+  font-weight: bolder;
   background-image: url(../img/background.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -65,8 +66,8 @@ body {
 }
 
 #logo {
-  width: 300px;
-  height: 180px;
+  width: 250px;
+  height: 130px;
 }
 
 li.nav-item {
@@ -119,7 +120,7 @@ li.nav-item {
     margin-bottom: 28px;
     background-image: url("../img/wood.jpeg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     -webkit-box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
     -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
@@ -174,7 +175,7 @@ li.nav-item {
 }
 
 #navbar a {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   color: #C7B082;
 }
 
