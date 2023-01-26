@@ -56,6 +56,7 @@ namespace SalesShack.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.ProductId = new SelectList(_db.Products, "ProductId", "Name");
             Sale thisSale = _db.Sales.FirstOrDefault(sale => sale.SaleId == id);
             return View(thisSale);
         }

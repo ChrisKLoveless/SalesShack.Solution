@@ -15,7 +15,9 @@
 
 		@Html.EditorFor(m => m.Price, new { htmlAttributes = new { placeholder = "Price", style= "text-align: center;" } })<br><br>
 		@Html.EditorFor(m => m.Description, new { htmlAttributes = new { placeholder = "Description", style= "text-align: center;" } })<br><br>
-    @Html.EditorFor(m => m.DateSold, new { htmlAttributes = new { placeholder = "Date Sold", style= "text-align: center;" } })<br><br>
+    	@Html.EditorFor(m => m.DateSold, new { htmlAttributes = new { placeholder = "Date Sold", style= "text-align: center;" } })<br><br>
+		@Html.LabelFor(model =>  model.Product, new {style = "padding-right: 10px;"})
+			@Html.DropDownList("ProductId")<br><br>
 		<input type="submit" id="button" value="Save" />
 	}
 </div>
