@@ -5,6 +5,7 @@ using SalesShack.Models;
 
 namespace SalesShack.Solution.Controllers;
 
+    [Authorize]
 public class HomeController : Controller
 {
     private readonly SalesShackContext _db;

@@ -9,6 +9,7 @@ using SalesShack.Models;
 
 namespace SalesShack.Controllers
 {
+        [Authorize]
     public class ProductsController : Controller
     {
         private readonly SalesShackContext _db;
