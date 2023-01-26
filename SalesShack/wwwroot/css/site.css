@@ -17,6 +17,10 @@ a {
   color: whitesmoke;
 }
 
+a:hover{
+  color: #3E4736;
+}
+
 body {
 
   color: #C7B082;
