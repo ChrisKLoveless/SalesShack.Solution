@@ -73,6 +73,7 @@ body {
 #logo {
   width: 250px;
   height: 130px;
+  padding-left: 20px;
 }
 
 li.nav-item {
